@@ -1,0 +1,7 @@
+steps to resolve errors in abhay redkars project
+1. right click on project, properties, java build path --> jre system library --> workspace defaults
+2. right click on project ,properties, java build path --> on the classpath --> put struts jars, jdbc jar
+3. right click on project, properties, targetted runtimes --> choose v8.5 tomcat version
+4. run project --> problem? 
+5. yes problem
+6. that is coz all the jars must also sit on web inf --> lib
