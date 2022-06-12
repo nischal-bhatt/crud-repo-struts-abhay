@@ -13,6 +13,7 @@ public class UpdateDataAction extends ActionSupport{
 	String productName;
 	String productCategory;
 	Integer productPrice;
+	private String createdDate;
 	
 	public String execute() {
 		System.out.println("execute() method called");
@@ -21,6 +22,7 @@ public class UpdateDataAction extends ActionSupport{
 		productName = product.getProductName();
 		productCategory = product.getProductCategory();
 		productPrice = product.getProductPrice();
+		createdDate = product.getCreatedDate();
 		return "success";
 	}
 
@@ -54,6 +56,14 @@ public class UpdateDataAction extends ActionSupport{
 
 	public void setProductPrice(Integer productPrice) {
 		this.productPrice = productPrice;
+	}
+
+	public String getCreatedDate() {
+		return createdDate;
+	}
+
+	public void setCreatedDate(String createdDate) {
+		this.createdDate = createdDate;
 	}
 	
 }

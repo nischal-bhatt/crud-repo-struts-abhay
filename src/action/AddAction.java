@@ -1,10 +1,11 @@
 package action;
 
-import com.opensymphony.xwork2.ActionSupport; 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
-import dao.LoginDAO;
+import com.opensymphony.xwork2.ActionSupport;
+
 import dao.ProductManagementDAO;
-import pojo.LoginInfo;
 import pojo.Product;
 
 public class AddAction extends ActionSupport{
@@ -16,8 +17,10 @@ public class AddAction extends ActionSupport{
 	
 	public String execute() {
 		String statusCode = "";
+		SimpleDateFormat formatter = new SimpleDateFormat("dd-MMM-yyyy");
+		String createdDateStr = formatter.format(new Date());
 		System.out.println("execute() method called");
-		Product product = new Product(productId, productName, productCategory, productPrice);
+		Product product = new Product(productId, productName, productCategory, productPrice,createdDateStr);
 		int recordAdded = ProductManagementDAO.addProduct(product);
 		if (recordAdded == 1) {
 			statusCode = "success";
